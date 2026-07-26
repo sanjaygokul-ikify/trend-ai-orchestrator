@@ -1,0 +1,16 @@
+version: '3'
+services:
+  orchestrator:
+    build: .
+    ports:
+      - '8080:8080'
+    depends_on:
+      - database
+    environment:
+      - DATABASE_URL=postgres://user:password@database:5432/database
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=database
