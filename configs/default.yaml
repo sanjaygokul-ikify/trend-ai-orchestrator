@@ -1,0 +1,19 @@
+# Default configuration for AI Orchestrator
+
+orchestrator:
+  port: 8080
+  database_url: postgres://user:password@database:5432/database
+  load_balancer_url: http://load-balancer:8080
+  monitoring_system_url: http://monitoring-system:8080
+
+ai_agents:
+  - id: agent1
+    type: type1
+  - id: agent2
+    type: type2
+
+tasks:
+  - id: task1
+    agent_id: agent1
+  - id: task2
+    agent_id: agent2
